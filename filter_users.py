@@ -8,8 +8,11 @@ def filter_users_by_name(name):
 
         filtered_users = [user for user in users if user["name"].lower() == name.lower()]
 
-        for user in filtered_users:
-            print(user)
+        if len(filtered_users) == 0:
+            print("No users found with that name.")
+        else:
+            for user in filtered_users:
+                print(user)
 
     except FileNotFoundError:
         print("User not found.")
@@ -22,8 +25,12 @@ def filter_users_by_age(age):
 
             filtered_users = [user for user in users if user["age"] == age]
 
-            for user in filtered_users:
-                print(user)
+            if len(filtered_users) == 0:
+                print("No users found with that age.")
+            else:
+                for user in filtered_users:
+                    print(user)
+
     except FileNotFoundError:
         print("User not found.")
 
@@ -35,7 +42,11 @@ def filter_users_by_email(email):
 
         filtered_users = [user for user in users if user["email"] == email]
 
-        for user in filtered_users:
-            print(user)
+        if len(filtered_users) == 0:
+            print("No users found with that email.")
+        else:
+            for user in filtered_users:
+                print(user)
+
     except FileNotFoundError:
         print("User not found.")
